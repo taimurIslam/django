@@ -1,0 +1,46 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+    "http://www.w3.org/TR/html4/strict.dtd"
+    >
+<html lang="en">
+<head>
+    <title>Register form with HTML5 using placeholder and CSS3</title>
+</head>
+
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static 'registration.css' %}"/>
+
+<body>
+    <div id="wrapper">
+        <form action="{%url 'insert_register_form_values_in_database' %}" method="post">
+            {% csrf_token %}
+            <fieldset>
+                <legend>Register Form</legend>
+                <div>
+                    <input type="text" name="first_name" placeholder="{{registered_user_edit_or_delete_all_information.first_name}}"/>
+                </div>
+                <div>
+                    <input type="text" name="last_name" placeholder="{{registered_user_edit_or_delete_all_information.last_name}}"/>
+                </div>
+
+                <div>
+                    <input type="text" name="phone_number" placeholder="{{registered_user_edit_or_delete_all_information.phone_number}}"/>
+                </div>
+                <div>
+                    <input type="text" name="email" placeholder="{{registered_user_edit_or_delete_all_information.email_address}}"/>
+                </div>
+                <div>
+                    <input type="text" name="user_name" placeholder="{{registered_user_edit_or_delete_all_information.user_name}}"/>
+                </div>
+                <div>
+                    <input type="password" name="password" placeholder="{{registered_user_edit_or_delete_all_information.user_password}}"/>
+                </div>
+                <div>
+                    <div class="small">Write your present address here</div>
+                    <textarea name="address" placeholder="{{registered_user_edit_or_delete_all_information.user_address}}"></textarea>
+                </div>
+                <input type="submit" name="submit" value="Edit"/>
+            </fieldset>
+        </form>
+    </div>
+</body>
+</html>
