@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+table, th, td {
+    border: 1px solid black;
+}
+</style>
+<body>
+    <h2>Registered User List:</h2>
+    <table style="border: 1px solid black; border-collapse: collapse;">
+    {% csrf_token %}
+        <tr >
+            <th>Name</th>
+            <th>Phone Number</th>
+            <th>Email</th>
+            <th>User Name</th>
+            <th>Address</th>
+            <th colspan="2">Control</th>
+        </tr>
+        {% for registered_user in registered_user_list %}
+        <tr>
+            <td>{{registered_user.name}}</td>
+            <td>{{registered_user.phone_number}}</td>
+            <td>{{registered_user.email_address}}</td>
+            <td>{{registered_user.user_name}}</td>
+            <td>{{registered_user.user_address}}</td>
+            <td>
+                <form action="{% url 'registered_user_data_edit' registered_user.id%}" method="post">
+                    {% csrf_token %}
+                    <input name="Edit" type="submit" value="Edit">
+                </form>
+            </td>
+            <td>
+                <form action="{% url 'registered_user_data_delete' registered_user.id%}" method="post">
+                    {% csrf_token %}
+                    <input name="Delete" type="submit" value="Delete">
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

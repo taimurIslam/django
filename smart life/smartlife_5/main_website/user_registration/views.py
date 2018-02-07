@@ -21,4 +21,20 @@ def insert_register_form_values_in_database(request):
         print(user_registration_informations.name)
         return render(request, 'registration.html')
 
+def registered_user_list(request):
+    registered_user_list = Registration.objects.all()
+    print(registered_user_list)
+    return render(request, 'registered_user_list.html', {'registered_user_list':registered_user_list,} )
+
+
+def registered_user_data_edit(request, registered_user_id ):
+    print(registered_user_id)
+    return HttpResponse("edited")
+
+
+def registered_user_data_delete(request, registered_user_id):
+    print(registered_user_id)
+    return HttpResponse("deleted")
+
+
 
