@@ -37,7 +37,7 @@ table, th, td {
             <td>
                 <form action="{% url 'registered_user_data_delete' registered_user.id%}" method="post">
                     {% csrf_token %}
-                    <input name="Delete" type="submit" value="Delete">
+                    <input name="Delete" type="submit" value="Delete" onclick="deleteFunction()">
                 </form>
             </td>
         </tr>
@@ -45,3 +45,8 @@ table, th, td {
     </table>
 </body>
 </html>
+<script>
+    function deleteFunction() {
+    alert("Do You Really Want To Delete This ??");
+}
+</script>

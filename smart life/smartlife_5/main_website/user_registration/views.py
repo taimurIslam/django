@@ -20,7 +20,8 @@ def insert_register_form_values_in_database(request):
         user_registration_informations.user_address = request.POST['address']
         user_registration_informations.save()
         #print(user_registration_informations.name)
-        return render(request, 'registration.html')
+        #return render(request, 'registration.html')
+        return redirect('view_registration_page')
 
 def registered_user_list(request):
     registered_user_list = Registration.objects.all()

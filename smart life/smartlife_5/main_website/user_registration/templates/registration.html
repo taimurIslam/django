@@ -16,27 +16,27 @@
             <fieldset>
                 <legend>Register Form</legend>
                 <div>
-                    <input type="text" name="first_name" placeholder="First Name"/>
+                    <input type="text" name="first_name" placeholder="First Name" required="required"/>
                 </div>
                 <div>
-                    <input type="text" name="last_name" placeholder="Last Name"/>
+                    <input type="text" name="last_name" placeholder="Last Name" required="required"/>
                 </div>
 
                 <div>
-                    <input type="text" name="phone_number" placeholder="Phone Number"/>
+                    <input type="text" pattern="^[\+][8][8]\d{11}" id="phn_num" name="phone_number" placeholder="Phone Number"/>
                 </div>
                 <div>
-                    <input type="text" name="email" placeholder="Email"/>
+                    <input type="email" name="email" placeholder="Email">
                 </div>
                 <div>
-                    <input type="text" name="user_name" placeholder="User Name"/>
+                    <input type="text" name="user_name" placeholder="User Name" required="required" />
                 </div>
                 <div>
-                    <input type="password" name="password" placeholder="Password"/>
+                    <input type="password" pattern=".{6,}" title="Six or more characters" name="password" placeholder="Password"/>
                 </div>
                 <div>
                     <div class="small">Write your present address here</div>
-                    <textarea name="address" placeholder="Address"></textarea>
+                    <textarea name="address" placeholder="Address" required="required"></textarea>
                 </div>
                 <input type="submit" name="submit" value="Submit"/>
             </fieldset>
