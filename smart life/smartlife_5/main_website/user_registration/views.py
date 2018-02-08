@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from django.http import HttpResponse
 from django.template import loader
 from .models import Registration
@@ -41,7 +41,8 @@ def registered_user_data_delete(request, registered_user_id):
     registered_user_list = get_object_or_404(Registration, pk = registered_user_id)
     registered_user_list.delete()
     registered_user_list = Registration.objects.all()
-    return render(request, 'registered_user_list.html', {'registered_user_list': registered_user_list, })
+    #return render(request, 'registered_user_list.html', {'registered_user_list': registered_user_list, })
+    return redirect('registered_user_list')
 
 
 
@@ -58,7 +59,8 @@ def registered_user_data_edited(request, registered_user_id):
         user_registration_informations.save()
 
         registered_user_list = Registration.objects.all()
-        return render(request, 'registered_user_list.html', {'registered_user_list': registered_user_list, })
+        #return render(request, 'registered_user_list.html', {'registered_user_list': registered_user_list, })
+        return redirect('registered_user_list')
 
 
 

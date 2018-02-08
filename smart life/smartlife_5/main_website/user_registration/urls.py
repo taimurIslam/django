@@ -1,6 +1,6 @@
 from django.urls import path, re_path
 from . import views
-
+#app_name = 'user_registration'
 urlpatterns = [
 
     re_path('^$', views.view_registration_page, name='view_registration_page'),
