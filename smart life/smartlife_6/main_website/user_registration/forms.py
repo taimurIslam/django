@@ -2,9 +2,6 @@ from django import forms
 from .models import *
 
 class Registration_Form(forms.ModelForm):
-    class Meta:
-        models = Registration
-        fields = '__all__'
     first_name = forms.CharField(
         required=True,
         widget=forms.TextInput
