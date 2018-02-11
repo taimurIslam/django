@@ -1,0 +1,48 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+    "http://www.w3.org/TR/html4/strict.dtd"
+    >
+<html lang="en">
+<head>
+    <title>Register form with HTML5 using placeholder and CSS3</title>
+</head>
+
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static 'registration.css' %}"/>
+
+<body>
+    <div id="wrapper">
+        <form action="{%url 'registered_user_data_edited' registered_user_edit_or_delete_all_information.id%}" method="post">
+            {% csrf_token %}
+            <fieldset>
+                <legend>Register Form</legend>
+                <div>
+                    First Name:  <br><input type="text" name="first_name" value="{{registered_user_edit_or_delete_all_information.first_name}}"/>
+                </div>
+                <div>
+                    Last Name:  <br><input type="text" name="last_name" value="{{registered_user_edit_or_delete_all_information.last_name}}"/>
+                </div>
+
+                <div>
+                    Phone Number: <br><input type="text" name="phone_number" value="{{registered_user_edit_or_delete_all_information.phone_number}}"/>
+                </div>
+                <div>
+                    Email Address: <br><input type="text" name="email" value="{{registered_user_edit_or_delete_all_information.email_address}}"/>
+                </div>
+                <div>
+                    User Name:  <br><input type="text" name="user_name" value="{{registered_user_edit_or_delete_all_information.user_name}}"/>
+                </div>
+                <div>
+                    Password:  <br><input type="password" name="password" value="{{registered_user_edit_or_delete_all_information.user_password}}"/>
+                </div>
+                <div>
+                    <div class="small">Write your present address here</div>
+                    Comment: <br><input type="text" style="height:100px"  name="address" value="{{registered_user_edit_or_delete_all_information.user_address}}"/>
+
+                </div>
+                <input type="submit" name="edit" value="Edit"/>
+                <input type="submit" name="cancel" value="Cancel"/>
+            </fieldset>
+        </form>
+    </div>
+</body>
+</html>
