@@ -45,8 +45,8 @@ class Registration_Form(forms.Form):
             (
             attrs={
                    'type': 'email',
-                   'maxlength': '11',
-                   'title': 'Minimum 3 character!',
+                   'maxlength': '30',
+                   'title': 'Minimum 30 character!',
                    'placeholder': "Email Address"
                    }
         ))

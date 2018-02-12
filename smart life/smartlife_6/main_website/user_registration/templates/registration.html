@@ -11,8 +11,11 @@
 
 <body>
     <div id="wrapper">
-
+    {%if page_related_data.task == 'view'%}
         <form action="{%url 'insert_register_form_values_in_database'%}" method="post">
+    {%else%}
+        <form action="{%url 'registered_user_data_edited' registered_user_edit_or_delete_all_information.id%}" method="post">
+    {%endif%}
             {%csrf_token%}
             <fieldset>
                 <legend>{{page_related_data.form_title}}</legend>
@@ -20,7 +23,7 @@
                 <div>
                     {{field}}
                 </div>
-                {% endfor%}
+                {% endfor %}
                 <input type="submit" name="submit" value="{{page_related_data.button_title}}"/>
                 {%if page_related_data.other_button_title %}
                     <input type="submit" name="submit" value="{{page_related_data.other_button_title}}"/>
