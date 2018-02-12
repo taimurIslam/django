@@ -3,7 +3,7 @@
     >
 <html lang="en">
 <head>
-    <title>Register form with HTML5 using placeholder and CSS3</title>
+    <title>{{page_related_data.title}}</title>
 </head>
 
 {% load staticfiles %}
@@ -11,36 +11,23 @@
 
 <body>
     <div id="wrapper">
-        <form action="{%url 'insert_register_form_values_in_database' %}" method="post">
-            {% csrf_token %}
-            <fieldset>
-                <legend>Register Form</legend>
-                <div>
-                    <input type="text" name="first_name" placeholder="First Name" required="required"/>
-                </div>
-                <div>
-                    <input type="text" name="last_name" placeholder="Last Name" required="required"/>
-                </div>
 
+        <form action="{%url 'insert_register_form_values_in_database'%}" method="post">
+            {%csrf_token%}
+            <fieldset>
+                <legend>{{page_related_data.form_title}}</legend>
+                {% for field in page_related_data.form%}
                 <div>
-                    <input type="text" pattern="^[\+][8][8]\d{11}" id="phn_num" name="phone_number" placeholder="Phone Number"/>
+                    {{field}}
                 </div>
-                <div>
-                    <input type="email" name="email" placeholder="Email">
-                </div>
-                <div>
-                    <input type="text" name="user_name" placeholder="User Name" required="required" />
-                </div>
-                <div>
-                    <input type="password" pattern=".{6,}" title="Six or more characters" name="password" placeholder="Password"/>
-                </div>
-                <div>
-                    <div class="small">Write your present address here</div>
-                    <textarea name="address" placeholder="Address" required="required"></textarea>
-                </div>
-                <input type="submit" name="submit" value="Submit"/>
+                {% endfor%}
+                <input type="submit" name="submit" value="{{page_related_data.button_title}}"/>
+                {%if page_related_data.other_button_title %}
+                    <input type="submit" name="submit" value="{{page_related_data.other_button_title}}"/>
+                {%endif%}
             </fieldset>
         </form>
+
     </div>
 </body>
 </html>

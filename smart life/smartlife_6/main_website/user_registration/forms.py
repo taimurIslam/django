@@ -1,87 +1,88 @@
 from django import forms
-from .models import *
 
-class Registration_Form(forms.ModelForm):
+
+class Registration_Form(forms.Form):
     first_name = forms.CharField(
         required=True,
         widget=forms.TextInput
         (
-            attrs= {'class': 'text',
+            attrs= {
                     'type':'text',
-                    'pattern': '[A0-Z9]{3,11}',
+                    'pattern': '[Aa-Zz]{1,11}',
                     'maxlength': '11',
                     'title': 'Minimum 3 character!',
-                    'placeholder':"Can't be blank"
+                    'placeholder':"First Name"
                     }
         ))
     last_name = forms.CharField(
         required=True,
         widget=forms.TextInput
             (
-            attrs={'class': 'text',
+            attrs={
                    'type': 'text',
-                   'pattern': '[A0-Z9]{3,11}',
+                   'pattern': '[Aa-Zz]{1,11}',
                    'maxlength': '11',
                    'title': 'Minimum 3 character!',
-                   'placeholder': "Can't be blank"
+                   'placeholder': "Last Name"
                    }
         ))
+
     phone_number = forms.CharField(
         required=True,
         widget=forms.TextInput
             (
-            attrs={'class': 'text',
+            attrs={
                    'type': 'text',
-                   'pattern': '[0-9]{3,11}',
-                   'maxlength': '11',
-                   'title': 'Minimum 3 character!',
-                   'placeholder': "Can't be blank"
+                   'pattern': '^[\+][8][8]\d{11}',
+                   'maxlength': '15',
+                   'title': 'Start with +88',
+                   'placeholder': "Phone Number"
                    }
         ))
     email_address = forms.CharField(
         required=True,
         widget=forms.TextInput
             (
-            attrs={'class': 'text',
+            attrs={
                    'type': 'email',
                    'maxlength': '11',
                    'title': 'Minimum 3 character!',
-                   'placeholder': "Can't be blank"
+                   'placeholder': "Email Address"
                    }
         ))
     user_name = forms.CharField(
         required=True,
         widget=forms.TextInput
             (
-            attrs={'class': 'text',
+            attrs={
                    'type': 'text',
-                   'pattern': '[A0-Z9]{3,11}',
+                   'pattern': '[A-Za-z0-9]{3,11}',
                    'maxlength': '11',
                    'title': 'Minimum 3 character!',
-                   'placeholder': "Can't be blank"
+                   'placeholder': "User Name"
                    }
         ))
     user_password = forms.CharField(
         required=True,
         widget=forms.TextInput
             (
-            attrs={'class': 'text',
+            attrs={
                    'type': 'password',
-                   'pattern': '[A0-Z9]{3,11}',
+                   'pattern': '[A-Za-z0-9]{3,11}',
                    'maxlength': '11',
                    'title': 'Minimum 3 character!',
-                   'placeholder': "Can't be blank"
+                   'placeholder': "User Password"
                    }
         ))
     user_address = forms.CharField(
         required=True,
         widget=forms.TextInput
             (
-            attrs={'class': 'text',
+            attrs={
                    'type': 'text',
-                   'pattern': '[A0-Z9]{3,11}',
-                   'maxlength': '11',
+                   'maxlength': '30',
                    'title': 'Minimum 3 character!',
-                   'placeholder': "Can't be blank"
+                   'placeholder': "User Address"
                    }
         ))
+
