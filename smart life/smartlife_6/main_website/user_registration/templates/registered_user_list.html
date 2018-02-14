@@ -23,7 +23,7 @@ table, th, td {
         </tr>
         {% for registered_user in registered_user_list %}
         <tr>
-            <td>{{registered_user.first_name}}{{registered_user.last_name}}</td>
+            <td>{{registered_user.first_name}}{{' '}}{{registered_user.last_name}}</td>
             <td>{{registered_user.phone_number}}</td>
             <td>{{registered_user.email_address}}</td>
             <td>{{registered_user.user_name}}</td>
@@ -35,7 +35,7 @@ table, th, td {
                 </form>
             </td>
             <td>
-                <form action="{% url 'registered_user_data_delete' registered_user.id%}" method="post">
+                <form id="" action="{% url 'registered_user_data_delete' registered_user.id%}" method="post">
                     {% csrf_token %}
                     <input name="Delete" type="submit" value="Delete" onclick="deleteFunction()">
                 </form>
@@ -46,7 +46,13 @@ table, th, td {
 </body>
 </html>
 <script>
-    function deleteFunction() {
-    alert("Do You Really Want To Delete This ??");
-}
+    function deleteFunction()
+    {
+        if (confirm("Do You Really Want To Delete This ??"))
+        {
+            }
+        else
+        {
+            }
+    }
 </script>

@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'user_registration.apps.UserRegistrationConfig',
+    'django_popup_view_field',
 ]
 
 MIDDLEWARE = [

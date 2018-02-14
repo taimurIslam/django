@@ -3,6 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/django.iml" filepath="$PROJECT_DIR$/.idea/django.iml" />
+      <module fileurl="file://$USER_HOME$/Desktop/wasa_v7.4(final)/.idea/wasa_v7.4(final).iml" filepath="$USER_HOME$/Desktop/wasa_v7.4(final)/.idea/wasa_v7.4(final).iml" />
+      <module fileurl="file://$USER_HOME$/Desktop/wasa_v7.5/.idea/wasa_v7.5.iml" filepath="$USER_HOME$/Desktop/wasa_v7.5/.idea/wasa_v7.5.iml" />
     </modules>
   </component>
 </project>
