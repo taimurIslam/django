@@ -16,6 +16,7 @@ class DeviceList(APIView):
         devices = device.objects.all()
         serializer = deviceSerializer(devices, many = True)
         return Response(serializer.data)
+        #return Response(jsonify(devices))
     def post(self, request):
         pass
 # class DeviceMatch():
